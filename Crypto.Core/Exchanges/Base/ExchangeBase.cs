@@ -33,8 +33,8 @@ namespace Crypto.Core {
 
 
         static Exchange() {
-            Registered.Add(PoloniexExchange.Default);
-            Registered.Add(BittrexExchange.Default);
+           // Registered.Add(PoloniexExchange.Default);
+            //Registered.Add(BittrexExchange.Default);
             Registered.Add(BinanceExchange.Default);
             Registered.Add(BitmexExchange.Default);
             //Registered.Add(BinanceFuturesExchange.Default);

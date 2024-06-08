@@ -210,6 +210,8 @@ namespace CryptoMarketClient {
             this.BuyPriceTextEdit.Properties.Mask.EditMask = "f8";
             this.BuyPriceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.BuyPriceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.BuyPriceTextEdit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.BuyPriceTextEdit.Properties.MaskSettings.Set("mask", "f8");
             this.BuyPriceTextEdit.Size = new System.Drawing.Size(861, 52);
             this.BuyPriceTextEdit.StyleController = this.dataLayoutControl1;
             this.BuyPriceTextEdit.TabIndex = 4;
@@ -228,6 +230,8 @@ namespace CryptoMarketClient {
             this.AmoutTextEdit.Properties.Mask.EditMask = "f8";
             this.AmoutTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.AmoutTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.AmoutTextEdit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.AmoutTextEdit.Properties.MaskSettings.Set("mask", "f8");
             this.AmoutTextEdit.Size = new System.Drawing.Size(861, 52);
             this.AmoutTextEdit.StyleController = this.dataLayoutControl1;
             this.AmoutTextEdit.TabIndex = 5;
@@ -244,6 +248,8 @@ namespace CryptoMarketClient {
             this.StopLossPricePercentTextEdit.Properties.Mask.EditMask = "P";
             this.StopLossPricePercentTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.StopLossPricePercentTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.StopLossPricePercentTextEdit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.StopLossPricePercentTextEdit.Properties.MaskSettings.Set("mask", "P");
             this.StopLossPricePercentTextEdit.Size = new System.Drawing.Size(873, 52);
             this.StopLossPricePercentTextEdit.StyleController = this.dataLayoutControl1;
             this.StopLossPricePercentTextEdit.TabIndex = 6;
@@ -262,6 +268,8 @@ namespace CryptoMarketClient {
             this.TakeProfitPercentTextEdit.Properties.Mask.EditMask = "P";
             this.TakeProfitPercentTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TakeProfitPercentTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TakeProfitPercentTextEdit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.TakeProfitPercentTextEdit.Properties.MaskSettings.Set("mask", "P");
             this.TakeProfitPercentTextEdit.Size = new System.Drawing.Size(873, 52);
             this.TakeProfitPercentTextEdit.StyleController = this.dataLayoutControl1;
             this.TakeProfitPercentTextEdit.TabIndex = 8;
@@ -280,6 +288,8 @@ namespace CryptoMarketClient {
             this.TakeProfitStartPercentTextEdit.Properties.Mask.EditMask = "P";
             this.TakeProfitStartPercentTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TakeProfitStartPercentTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TakeProfitStartPercentTextEdit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.TakeProfitStartPercentTextEdit.Properties.MaskSettings.Set("mask", "P");
             this.TakeProfitStartPercentTextEdit.Size = new System.Drawing.Size(873, 52);
             this.TakeProfitStartPercentTextEdit.StyleController = this.dataLayoutControl1;
             this.TakeProfitStartPercentTextEdit.TabIndex = 7;
@@ -296,6 +306,8 @@ namespace CryptoMarketClient {
             this.textEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEdit1.Properties.Mask.EditMask = "f8";
             this.textEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEdit1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit1.Properties.MaskSettings.Set("mask", "f8");
             this.textEdit1.Size = new System.Drawing.Size(861, 52);
             this.textEdit1.StyleController = this.dataLayoutControl1;
             this.textEdit1.TabIndex = 10;
@@ -356,6 +368,8 @@ namespace CryptoMarketClient {
             this.textEdit4.Properties.Mask.EditMask = "f8";
             this.textEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit4.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textEdit4.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit4.Properties.MaskSettings.Set("mask", "f8");
             this.textEdit4.Size = new System.Drawing.Size(861, 52);
             this.textEdit4.StyleController = this.dataLayoutControl1;
             this.textEdit4.TabIndex = 4;
@@ -374,6 +388,8 @@ namespace CryptoMarketClient {
             this.textEdit3.Properties.Mask.EditMask = "f8";
             this.textEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit3.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textEdit3.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit3.Properties.MaskSettings.Set("mask", "f8");
             this.textEdit3.Size = new System.Drawing.Size(861, 52);
             this.textEdit3.StyleController = this.dataLayoutControl1;
             this.textEdit3.TabIndex = 5;

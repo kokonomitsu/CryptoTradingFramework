@@ -491,7 +491,9 @@ namespace Crypto.Core {
             return true;
         }
         public override bool GetTickersInfo() {
-            string address = "https://poloniex.com/public?command=returnTicker";
+           // return false;
+
+            string address = "https://api.poloniex.com/markets/ticker24h";
             string text = string.Empty;
             try {
                 text = GetDownloadString(address);
@@ -502,25 +504,50 @@ namespace Crypto.Core {
             if(HasError(text))
                 return false;
             ClearTickers();
-            JObject res = JsonConvert.DeserializeObject<JObject>(text);
+            //JArray a = JArray.Parse(text);
             int index = 0;
-            foreach(JProperty prop in res.Children()) {
+            //foreach (JObject o in a.Children<JObject>())
+            //{
+            //    try
+            //    {
+
+            //        PoloniexTicker t = (PoloniexTicker)GetOrCreateTicker(o["symbol"].ToString());
+            //        t.Index = index;
+            //        t.CurrencyPair = o["symbol"].ToString();
+            //        t.BaseCurrency = o.Value<string>("baseCurrencyName");
+            //        t.BaseCurrencyDisplayName = o.Value<string>("baseCurrencyName");
+
+            //        AddTicker(t);
+            //        index++;
+            //    }
+            //    catch
+            //    {
+            //    }
+            //}
+
+            //var result = JsonConvert.DeserializeObject<JObject>(text);
+
+            JObject res = JsonConvert.DeserializeObject<JObject>(text);
+
+
+            foreach (JProperty prop in res.Children())
+            {
                 PoloniexTicker t = (PoloniexTicker)GetOrCreateTicker(prop.Name);
                 t.Index = index;
                 t.CurrencyPair = prop.Name;
-                if(PoloniexTickerCodesProvider.Codes.ContainsKey(t.CurrencyPair))
+                if (PoloniexTickerCodesProvider.Codes.ContainsKey(t.CurrencyPair))
                     t.Code = PoloniexTickerCodesProvider.Codes[t.CurrencyPair];
                 JObject obj = (JObject)prop.Value;
                 t.Id = obj.Value<int>("id");
-                t.LastString = obj.Value<string>("last");
-                t.LowestAskString = obj.Value<string>("lowestAsk");
-                t.HighestBidString = obj.Value<string>("highestBid");
+                t.LastString = obj.Value<string>("markPrice");
+                t.LowestAskString = obj.Value<string>("ask");
+                t.HighestBidString = obj.Value<string>("bid");
                 //t.Change = obj.Value<double>("percentChange");
-                t.BaseVolumeString = obj.Value<string>("baseVolume");
-                t.VolumeString = obj.Value<string>("quoteVolume");
-                t.IsFrozen = obj.Value<int>("isFrozen") != 0;
-                t.Hr24HighString = obj.Value<string>("high24hr");
-                t.Hr24LowString = obj.Value<string>("low24hr");
+                 t.BaseVolumeString = obj.Value<string>("amount");
+                t.VolumeString = obj.Value<string>("quantity");
+                // t.IsFrozen = obj.Value<int>("isFrozen") != 0;
+                t.Hr24HighString = obj.Value<string>("high");
+                t.Hr24LowString = obj.Value<string>("low");
                 AddTicker(t);
                 index++;
             }
@@ -539,7 +566,7 @@ namespace Crypto.Core {
         public override bool UpdateTickersInfo() {
             if(Tickers.Count == 0)
                 return false;
-            string address = "https://poloniex.com/public?command=returnTicker";
+            string address = "https://api.poloniex.com/markets/ticker24h";
             string text = string.Empty;
             try {
                 text = GetDownloadString(address);
@@ -549,21 +576,42 @@ namespace Crypto.Core {
             }
             if(string.IsNullOrEmpty(text))
                 return false;
+          
+            int index = 0;
+            //foreach (JObject o in a.Children<JObject>())
+            //{
+            //    try
+            //    {
+
+            //        PoloniexTicker t = (PoloniexTicker)Tickers.FirstOrDefault((i) => i.CurrencyPair == o["symbol"].ToString());
+            //        if (t == null)
+            //            continue;
+
+            //        AddTicker(t);
+            //        index++;
+            //    }
+            //    catch
+            //    {
+            //    }
+            //}
+
+
             JObject res = JsonConvert.DeserializeObject<JObject>(text);
-            foreach(JProperty prop in res.Children()) {
+            foreach (JProperty prop in res.Children())
+            {
                 PoloniexTicker t = (PoloniexTicker)Tickers.FirstOrDefault((i) => i.CurrencyPair == prop.Name);
-                if(t == null)
+                if (t == null)
                     continue;
                 JObject obj = (JObject)prop.Value;
-                t.Last = obj.Value<double>("last");
-                t.LowestAsk = obj.Value<double>("lowestAsk");
-                t.HighestBid = obj.Value<double>("highestBid");
+                t.LastString = obj.Value<string>("markPrice");
+                t.LowestAskString = obj.Value<string>("ask");
+                t.HighestBidString = obj.Value<string>("bid");
                 //t.Change = obj.Value<double>("percentChange");
-                t.BaseVolume = obj.Value<double>("baseVolume");
-                t.Volume = obj.Value<double>("quoteVolume");
-                t.IsFrozen = obj.Value<int>("isFrozen") != 0;
-                t.Hr24High = obj.Value<double>("high24hr");
-                t.Hr24Low = obj.Value<double>("low24hr");
+                t.BaseVolumeString = obj.Value<string>("amount");
+                t.VolumeString = obj.Value<string>("quantity");
+                // t.IsFrozen = obj.Value<int>("isFrozen") != 0;
+                t.Hr24HighString = obj.Value<string>("high");
+                t.Hr24LowString = obj.Value<string>("low");
             }
             return true;
         }

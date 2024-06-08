@@ -582,7 +582,7 @@ namespace Crypto.Core.Helpers {
 
         public Dictionary<string, Dictionary<string, JsonObjectScheme>> Schemes { get; } = new Dictionary<string, Dictionary<string, JsonObjectScheme>>();
         public JsonObjectScheme GetObjectScheme(string schemeName, byte[] bytes) {
-            if(bytes.Length <= 2)
+            if(bytes == null || bytes.Length <= 2)
                 return JsonObjectScheme.Empty;
             Dictionary<string, JsonObjectScheme> dic = null;
             lock(Schemes) {

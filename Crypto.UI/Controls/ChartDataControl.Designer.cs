@@ -433,11 +433,11 @@
             this.standaloneBarDockControl1.AutoSize = true;
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 60);
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 46);
             this.standaloneBarDockControl1.Manager = this.barManager1;
             this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1665, 58);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1665, 40);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // chartPrintExportBar1
@@ -483,7 +483,7 @@
             this.chartControl.Legend.MaxCrosshairContentWidth = 200;
             this.chartControl.Legend.Name = "Default Legend";
             this.chartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.chartControl.Location = new System.Drawing.Point(0, 118);
+            this.chartControl.Location = new System.Drawing.Point(0, 86);
             this.chartControl.Margin = new System.Windows.Forms.Padding(4);
             this.chartControl.Name = "chartControl";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
@@ -491,7 +491,7 @@
             series1.View = lineSeriesView1;
             this.chartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl.Size = new System.Drawing.Size(1665, 778);
+            this.chartControl.Size = new System.Drawing.Size(1665, 810);
             this.chartControl.TabIndex = 6;
             this.chartControl.ToolTipController = this.toolTipController1;
             this.chartControl.Click += new System.EventHandler(this.chartControl_Click);
@@ -728,7 +728,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1665, 60);
+            this.barDockControlTop.Size = new System.Drawing.Size(1665, 46);
             // 
             // barDockControlBottom
             // 
@@ -743,19 +743,19 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 60);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 46);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 836);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 850);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1665, 60);
+            this.barDockControlRight.Location = new System.Drawing.Point(1665, 46);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 836);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 850);
             // 
             // createBarBaseItem1
             // 

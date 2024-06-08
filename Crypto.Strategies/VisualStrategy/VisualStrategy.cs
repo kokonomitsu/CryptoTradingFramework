@@ -128,6 +128,12 @@ namespace Crypto.Core.Strategies.VisualStrategy {
         WfRunner IWfDocumentOwner.CreateRunner(WfDocument document) {
             return new WfStrategyDocumentRunner((WfStrategyDocument)document);
         }
+
+        public WfDocument LoadDocumentById(Guid id)
+        {
+          //  throw new NotImplementedException();
+            return Document?.Owner?.LoadDocumentById(id);
+        }
     }
 
     public class VisualStrategyRegistrationInfo : StrategyRegistrationInfo {

@@ -65,7 +65,7 @@ namespace CryptoMarketClient.Strategies {
         public bool ShowData(StrategyBase strategy) {
             Type type = strategy.GetType();
             StrategyConfigurationInfo info = Items.FirstOrDefault(i => i.StrategyType == type);
-            if(info == null) {
+            if(info == null || info.DataFormType == null) {
                 XtraMessageBox.Show("Data form not found for strategy " + type.Name);
                 return false;
             }
